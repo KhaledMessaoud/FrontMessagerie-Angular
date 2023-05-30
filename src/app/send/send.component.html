@@ -1,0 +1,70 @@
+<div class="container">
+
+    <div class="row" style="margin-top:10px;">
+        <div class="col-12">
+            <div class="card bg-primary text-white">
+                <div class="card-header">
+                    <h1>Boite de Messagerie @ESSAT</h1><br/>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" style="margin-top:10px;">
+        <div class="col">
+            <div class="alert alert-info">
+                <h5>Bienvenue Mr {{user.nom}} {{user.prenom}} (se déconnecter)</h5>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row" style="margin-top:5px;">
+        <div class="col-3">
+            <div class="list-group">
+                <a href="/recus" class="list-group-item list-group-item-action active">
+                    <span class="fa fa-envelope"></span>
+                    Messages réçus
+                    <span class="badge badge-pill badge-warning">25</span>
+                </a>
+                <a href="/envoyes" class="list-group-item list-group-item-action">
+                    <span class="fa fa-paper-plane"></span>
+                    Messages envoyés
+                    <span class="badge badge-pill badge-info">5</span>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                    <span class="fa fa-th-large"></span>
+                    Messages Archivés
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                    <span class="fa fa-trash"></span>
+                    Messages Spams
+                </a>
+            </div>
+        </div>
+
+        <div class="col-9">
+            <div class="col">
+              <div class="card">
+                <div class="card-header bg-primary text-white">Envoyer un message</div>
+  
+            <div class="form-group">
+              <label>Sujet</label>
+              <input type="text" class="form-control" [(ngModel)]="message.sujet">
+            </div>
+            <div class="form-group">
+              <label>A</label>
+              <select class="form-control" [(ngModel)]="message.user_receive">
+                <option *ngFor="let u of users" [ngValue]="u">
+                  {{u.prenom}}{{u.nom}}
+                </option>
+             </select>
+            </div>
+            <div class="form-group">
+              <input type="submit" class="form-control" (click)="envoyer()">
+            </div>
+          </div>
+        </div>
+    </div>
+
+</div>

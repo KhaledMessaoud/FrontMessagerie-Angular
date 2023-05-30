@@ -1,0 +1,29 @@
+<div class="container-fluid ">
+  <br><br><br>
+   <div class="row mt-2">
+     <div class="offset-4 col-4 bg-light border border-primary">
+       <h1 style="text-align:center">Messagerie@ENIG</h1>
+       <h3 style="text-align:center">Connexion</h3>
+       <form action="" >
+             
+                <div class="form-group">
+               <input type="email" class="form-control"  [(ngModel)]="email" name="email" value="" placeholder="Username" required="required" />
+               <span class="glyphicon glyphicon-user form-control-feedback"></span>
+               </div>
+               <div class="form-group">
+                   <input type="password" class="form-control" [(ngModel)]="password" name="_password" placeholder="Password" required="required" />
+                   <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+               </div>
+
+             
+            <div class="form-row">
+              <div class="col">
+                <input type="submit" (click)="verif()" class="btn btn-primary btn-block mb-1" id="_submit" name="_submit" value="Log in" />
+              </div>
+             
+           </div>
+       </form>
+     </div>
+     
+   </div>
+ </div>

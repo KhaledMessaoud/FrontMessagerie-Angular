@@ -1,0 +1,86 @@
+<div class="container">
+
+    <div class="row" style="margin-top:10px;">
+        <div class="col-12">
+            <div class="card bg-primary text-white">
+                <div class="card-header">
+                    <h1>Boite de Messagerie @ESSAT</h1><br/>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" style="margin-top:10px;">
+        <div class="col">
+            <div class="alert alert-info">
+                <h5>Bienvenue Mr {{user.nom}} {{user.prenom}} (se déconnecter)</h5>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row" style="margin-top:5px;">
+        <div class="col-3">
+            <div class="list-group">
+                <a href="/recus" class="list-group-item list-group-item-action active">
+                    <span class="fa fa-envelope"></span>
+                    Messages réçus
+                    <span class="badge badge-pill badge-warning">25</span>
+                </a>
+                <a href="/envoyes" class="list-group-item list-group-item-action">
+                    <span class="fa fa-paper-plane"></span>
+                    Messages envoyés
+                    <span class="badge badge-pill badge-info">5</span>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                    <span class="fa fa-th-large"></span>
+                    Messages Archivés
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">
+                    <span class="fa fa-trash"></span>
+                    Messages Spams
+                </a>
+            </div>
+        </div>
+
+        <div class="col-9">
+            <div class="col">
+                <a routerLink="/send" class="btn btn-success">send</a>
+            </div>
+            <div class="col">
+                <div class="card text-white">
+                    <div class="card-header bg-primary"> Liste des Massages envoyer</div>
+                    <table class="table table-hover">
+                        <thead class="thead-light">
+                          <tr><th>De</th> <th>Email</th><th>Sujet</th>
+                          <th>Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="bg-info" *ngFor="let m of liste">
+                                <td>{{m.user_send.prenom}}</td><td>{{m.user_send.nom}}</td>
+                                <td>{{m.sujet}}</td>
+                                <td>
+                                    <button class="btn btn-danger">
+                                        <span class="fa fa-trash"></span>
+                                    </button>
+                                    <button class="btn btn-success">
+                                        <span class="fa fa-edit"></span>
+                                    </button>
+                                </td>
+                            </tr>
+                            
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>
